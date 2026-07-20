@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOSSConf 2026 | Tamil Open Source Software Conference</title>
+
+    <meta name="description"
+          content="Tamil Open Source Software Conference focused on Free Software, Privacy, Innovation and Community Learning.">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    
+
+
+/* ===== PREMIUM COLOR PALETTE ===== */
+:root{
+    --bg:#0b1220;
+    --bg-secondary:#111827;
+    --card:#161f2f;
+    --card-hover:#1b263b;
+
+    --text:#f2f2f2;
+    --text-soft:#c7d2e0;
+    --text-muted:#94a3b8;
+
+    --primary:#0067b8;
+    --primary-hover:#005a9e;
+    --primary-light:#2b88d8;
+
+    --border:#263449;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --shadow-hover:0 18px 45px rgba(0,103,184,.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+.container{
+    width:90%;
+    max-width:1120px;
+    margin:auto;
+}
+
+/* ===== HEADER ===== */
+.header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(11,18,32,.82);
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+    z-index:1000;
+}
+
+.logo h2{
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:.5px;
+    color:var(--text);
+}
+
+
+.navbar a{
+    color:var(--text-soft);
+    text-decoration:none;
+    margin-left:24px;
+    font-weight:600;
+    transition:.25s ease;
+    position:relative;
+}
+
+.navbar a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--primary-light);
+    transition:.25s ease;
+}
+
+.navbar a:hover
+{
+    color:var(--text);
+}
+
+.navbar a:hover::after,
+.navbar a.active::after{
+    width:100%;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    color:var(--text);
+    cursor:pointer;
+}
+
+/* ===== HERO ===== */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 70px;
+
+    background:
+        radial-gradient(circle at top right, rgba(0,103,184,.25), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(43,136,216,.14), transparent 30%),
+        linear-gradient(135deg, #0b1220 0%, #101a2c 55%, #0b1220 100%);
+}
+
+.hero-badge{
+    display:inline-block;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+    color:var(--text-soft);
+    padding:10px 18px;
+    border-radius:999px;
+    margin-bottom:26px;
+    font-size:14px;
+    backdrop-filter:blur(8px);
+}
+
+.hero h1{
+    font-size:64px;
+    line-height:1.05;
+    margin-bottom:18px;
+    letter-spacing:1px;
+}
+
+.hero h2{
+    font-size:30px;
+    color:#9fd3ff;
+    margin-bottom:22px;
+}
+
+.conference-title{
+    font-size:54px;
+    font-weight:800;
+    margin-bottom:28px;
+}
+
+.conference-title span{
+    color:var(--primary-light);
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.25s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg, var(--primary-light), var(--primary));
+    color:white;
+    box-shadow:0 10px 25px rgba(0,103,184,.35);
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 16px 32px rgba(0,103,184,.45);
+}
+
+.btn-outline{
+    border:1px solid rgba(159,211,255,.45);
+    color:var(--text);
+    background:rgba(255,255,255,.03);
+}
+
+.btn-outline:hover{
+    background:rgba(0,103,184,.12);
+    border-color:var(--primary-light);
+}
+
+.scroll-down{
+    position:absolute;
+    bottom:28px;
+    font-size:30px;
+}
+
+.scroll-down a{
+    color:var(--text-soft);
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title{
+    text-align:center;
+    font-size:44px;
+    margin-bottom:54px;
+    letter-spacing:.4px;
+}
+
+.section-title span{
+    color:var(--primary-light);
+}
+
+/* ===== TEAM ===== */
+.team{
+    padding:100px 0;
+}
+
+.team-container{
+    display:flex;
+    justify-content:center;
+    gap:32px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+    padding:36px 26px;
+    border-radius:24px;
+    width:310px;
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:var(--shadow);
+
+    transition:.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    border-color:rgba(43,136,216,.45);
+    box-shadow:var(--shadow-hover);
+}
+
+.card img{
+    display:block;
+    margin:auto auto 22px;
+    width:156px;
+    height:156px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid rgba(43,136,216,.9);
+    box-shadow:0 0 0 8px rgba(43,136,216,.12);
+}
+
+.card h3{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:var(--text-soft);
+    margin-bottom:18px;
+}
+
+.card a{
+    color:#9fd3ff;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.card a:hover{
+    color:white;
+}
+
+/* ===== APPS ===== */
+.apps{
+    padding:100px 0;
+    background:linear-gradient(180deg, #0f1728 0%, #0b1220 100%);
+}
+
+.apps-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.app-card{
+    background:var(--card);
+    padding:36px 26px;
+    border-radius:24px;
+    width:290px;
+    text-align:center;
+
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+
+    transition:.3s ease;
+}
+
+.app-card:hover{
+    transform:translateY(-8px);
+    background:var(--card-hover);
+    border-color:rgba(43,136,216,.55);
+    box-shadow:var(--shadow-hover);
+}
+
+.app-card img{
+    width:92px;
+    height:92px;
+    object-fit:contain;
+    margin:0 auto 22px;
+    display:block;
+}
+
+.app-card h3{
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.app-card p{
+    color:var(--text-soft);
+    margin-bottom:20px;
+}
+
+.app-card a{
+    display:inline-block;
+    background:linear-gradient(135deg, var(--primary-light), var(--primary));
+    color:#fff;
+    padding:11px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    box-shadow:0 8px 22px rgba(0,103,184,.28);
+}
+
+.app-card a:hover{
+    background:linear-gradient(135deg, #3a98ea, var(--primary-hover));
+}
+
+/* ===== POWERED BY ===== */
+.powered{
+    padding:100px 0;
+}
+
+.powered-container{
+    display:flex;
+    justify-content:center;
+}
+
+.powered-card{
+    background:var(--card);
+    padding:44px 34px;
+    border-radius:24px;
+    max-width:560px;
+    text-align:center;
+
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+}
+
+.payilagam-logo{
+    width:150px;
+    margin-bottom:22px;
+}
+
+.powered-card h3{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.powered-card p{
+    color:var(--text-soft);
+}
+
+/* ===== FOOTER ===== */
+.footer{
+    background:#070c16;
+    padding:26px 0;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer p{
+    color:var(--text-muted);
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:48px;
+    height:48px;
+
+    background:linear-gradient(135deg, var(--primary-light), var(--primary));
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    text-decoration:none;
+    font-size:18px;
+
+    box-shadow:0 10px 24px rgba(0,103,184,.38);
+    transition:.25s ease;
+}
+
+.back-to-top:hover{
+    transform:translateY(-3px) scale(1.05);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:768px){
+
+    .navbar{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .conference-title{
+        font-size:36px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+}
+
+
+
+
+</style>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+    <!-- <div class="logo">
+        <h2>TOSS<span>Conf</span></h2>
+    </div> -->
+
+    <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#team">Our Team</a>
+        <a href="#apps">Install Apps</a>
+    </nav>
+
+    <div class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            🌿 Open Source • Privacy • Innovation
+        </div>
+
+        <h1>
+            WELCOME TO ALL
+            <br>
+            TECH INNOVATORS
+        </h1>
+
+        <h2>தமிழ் கட்டற்ற மென்பொருள் மாநாடு</h2>
+
+        <div class="conference-title">
+            TOSSConf <span>2026</span>
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="#apps" class="btn btn-primary">
+                <i class="fa-solid fa-download"></i>
+                Install Apps
+            </a>
+
+            <a href="#team" class="btn btn-outline">
+                <i class="fa-solid fa-users"></i>
+                Meet Our Team
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="scroll-down">
+        <a href="#team">
+            <i class="fa-solid fa-angles-down"></i>
+        </a>
+    </div>
+
+</section>
+
+<!-- OUR TEAM -->
+<section class="team" id="team">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Our <span>Team</span>
+        </h2>
+
+        <div class="team-container">
+
+            <div class="card">
+
+                <img src="image/sanjay.jpg" alt="Sanjay S">
+
+                <h3>Sanjay S</h3>
+
+                <p>Python Full Stack Developer</p>
+
+                <a href="https://sanjaysugumar-portfolio.netlify.app"
+                   target="_blank">
+
+                    <i class="fa-solid fa-globe"></i>
+                    Portfolio
+
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <img src="image/gokul.jpg" alt="Gokul">
+
+                <h3>Gokul</h3>
+
+                <p>Java Full Stack Developer</p>
+
+                <a href="https://gilded-raindrop-20efa1.netlify.app/">
+
+                    <i class="fa-solid fa-globe"></i>
+                    Portfolio
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- APPS -->
+<section class="apps" id="apps">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Install <span>Open Source Apps</span>
+        </h2>
+
+        <div class="apps-container">
+
+            <div class="app-card">
+
+                <img src="image/fdroid.png" alt="F-Droid">
+
+                <h3>F-Droid</h3>
+
+                <p>Open source app store for Android devices.</p>
+
+                <a href="https://f-droid.org/" target="_blank">
+
+                    <i class="fa-solid fa-download"></i>
+                    Install
+
+                </a>
+
+            </div>
+
+            <div class="app-card">
+
+                <img src="image/organicmap.png" alt="Organic Maps">
+
+                <h3>Organic Maps</h3>
+
+                <p>Offline maps with privacy-focused navigation.</p>
+
+                <a href="https://organicmaps.app/" target="_blank">
+
+                    <i class="fa-solid fa-download"></i>
+                    Install
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- POWERED BY -->
+<section class="powered" id="powered">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Powered <span>By</span>
+        </h2>
+
+        <div class="powered-container">
+
+            <div class="powered-card">
+
+                <img src="image/payilagam.png"
+                     alt="Payilagam"
+                     class="payilagam-logo">
+
+
+              
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-bottom">
+        <p>© 2026 TOSSConf. Sanjay @ Gokul</p>
+    </div>
+
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#home" class="back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+</a>
+
+</body>
+</html>
