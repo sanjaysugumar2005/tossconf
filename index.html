@@ -271,18 +271,19 @@ body{
 .section-title span{
     color:#2b88d8;
 }
+.team-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    max-width:1400px;
+    margin:auto;
+}
 
 /* Container */
-.team-container{
-    display:flex;
-    justify-content:center;
-    gap:32px;
-    flex-wrap:wrap;
-}
 
 /* Card */
 .card{
-    width:310px;
+    width:100%;
     padding:36px 26px;
     text-align:center;
 
@@ -364,27 +365,37 @@ body{
 
 /* ===== MOBILE ===== */
 @media (max-width:768px){
-
-    .section-title{
-        font-size:32px;
+    
+    .team-container{
+        display:grid;
+        grid-template-columns:repeat(2, 1fr);
+        gap:20px;
     }
 
     .card{
         width:100%;
-        max-width:340px;
-        padding:32px 22px;
+        max-width:none;
+        padding:20px 15px;
     }
 
     .card img{
-        width:140px;
-        height:140px;
+        width:100px;
+        height:100px;
     }
 
     .card h3{
-        font-size:22px;
+        font-size:18px;
+    }
+
+    .card p{
+        font-size:14px;
+    }
+
+    .card a{
+        font-size:14px;
+        padding:8px 16px;
     }
 }
-
 
 
 /* ===== APPS ===== */
@@ -657,6 +668,26 @@ body{
                 </a>
 
             </div>
+
+        <!-- Sanjay -->
+
+                <div class="card">
+
+                    <img src="image/arun.jpg" alt="Arun Kumar K">
+
+                    <h3>Arun Kumar K</h3>
+
+                    <p>Java Full Stack Developer</p>
+
+                    <a href="https://sanjaysugumar-portfolio.netlify.app"
+                    target="_blank">
+
+                        <i class="fa-solid fa-globe"></i>
+                        Portfolio
+
+                    </a>
+
+                </div>
 
             <!-- Sanjay -->
             <div class="card">
