@@ -543,6 +543,15 @@ body{
 </style>
 
 <body>
+<!-- Invoke your consent function when a user interacts with your banner -->
+
+  <button onclick="allConsentGranted()">Accept all</button>
+
+s
+  ...
+  <button onclick="allConsentGranted()">Accept all</button>
+
+
 
 <!-- HEADER -->
 <header class="header">
@@ -784,6 +793,15 @@ body{
   gtag('js', new Date());
 
   gtag('config', 'G-K8X1NSXDQ7');
+
+function allConsentGranted() {
+  gtag('consent', 'update', {
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'ad_storage': 'granted',
+    'analytics_storage': 'granted'
+  });
+}
 </script>
 
 </body>
